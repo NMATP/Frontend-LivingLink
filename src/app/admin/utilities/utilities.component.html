@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-bottom border-bottom mb-3">
+      <h1>Utilities Management</h1>
+      <div class="d-flex flex-row align-items-end gap-2 mb-3">
+        <button class="btn btn-outline-secondary d-flex flex-row">
+          <i class="bi bi-filter me-2"></i> Filter
+        </button>
+        <input type="text" class="form-control" placeholder="search">
+      
+        <button class="btn btn-outline-secondary d-flex flex-row" routerLink="/utilities-record">Utilities Record</button>
+      </div>
+      
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Room/Building</th>
+        <th scope="col">Water units </th>
+        <th scope="col">Electricity units</th>
+
+        <th scope="col">Create by</th>
+        <th scope="col">Create when</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let row of getUtilitiesList(5)">
+          <th scope="row">{{ row.id }}</th>
+          <td>{{ row.room +'/'+ row.building }}</td>
+          <td>{{ row.utilities_unit.water}}</td>
+          <td>{{ row.utilities_unit.electricity }}</td>
+
+          <td>{{ row.create_by }}</td>
+          <td>{{ row.create_on.toISOString() }}</td>
+          
+        </tr>
+
+      </tbody>
+    </table>
+    <div>
+        <form action="">
+            <h2>Setting</h2>
+            <label for="water_price_units">Water price per units:</label><br>
+            <input type="number" id="water_price_units" name="water_price_units" value="3"><br>
+            
+            <label for="electricity_price_units">Electricity price per units:</label><br>
+            <input type="number" id="electricity_price_units" name="electricity_price_units" value="8"><br><br>
+
+
+        <!--Building name/ Room number/ Type/ Rental Price/ status-->
+            <input type="submit" value="save">
+            
+            
+
+        </form>
+    </div>
+
+  </div>
+
+

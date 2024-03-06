@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-bottom border-bottom mb-3">
+        <h1>Add Tenants</h1>
+        <div class="d-flex flex-row align-items-end gap-2 mb-3">
+            <button class="btn btn-outline-secondary d-flex flex-row" routerLink="/tenants">Back</button>
+        </div>
+    </div>
+    <form action="#">
+        <div class="row">
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label" for="TenantName">Tenant Name</label>
+                    <input class="form-control" type="text" id="TenantName" name="TenantName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="Email">Email</label><br>
+                    <input class="form-control" type="email" id="Email" name="Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="PhoneNumber">Phone Number</label>
+                    <input class="form-control" type="tel" id="PhoneNumber" name="PhoneNumber">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="Address">Address</label>
+                    <textarea class="form-control" id="Address" name="Address"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="citizen">Citizen ID</label>
+                    <input class="form-control" type="text" id="citizen" name="citizen">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label" for="RoomNumber">Room Number</label>
+                    <select class="form-select" id="RoomNumber" name="RoomNumber">
+                        <option selected>A1</option>
+                        <option>A2</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="Building">Building</label>
+                    <select class="form-select" id="BuildingName" name="BuildingName">
+                        <option selected>Building A</option>
+                        <option>Building B</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="PaymentDate">payment date:</label>
+                    <select class="form-select" id="PaymentDate" name="PaymentDate">
+                        <option *ngFor="let item of [].constructor(30); let i = index">{{i+1}}</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div>
+                <input class="btn btn-outline-primary me-2" type="submit" value="save" routerLink="/tenants">
+                <input class="btn btn-outline-danger" type="button" value="cancel" routerLink="/tenants">
+            </div>
+
+        </div>
+    </form>
+</div>

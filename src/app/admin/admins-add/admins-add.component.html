@@ -1,0 +1,82 @@
+<!-- <div class="container">
+    <div class="d-flex justify-content-between align-bottom border-bottom mb-3">
+        <h1>ADD Admin</h1>
+        <div class="d-flex flex-row align-items-end gap-2 mb-3">
+            <button class="btn btn-outline-secondary d-flex flex-row" routerLink="/admins">Back</button>
+        </div>
+    </div>        
+    <body>
+        <form action="#">
+            <label for="AdminName">Admin Name:</label><br>
+            <input type="text" id="AdminName" name="AdminName"><br>
+            
+            <label for="Role">Role:</label><br>
+            <input type="text" id="Role" name="Role"><br> 
+
+
+            <label for="PhoneNumber">Phone number:</label><br>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber"><br>
+
+            <label for="Email">Email:</label><br>
+            <input type="email" id="Email" name="Email"><br>
+
+
+            <input type="submit" value="save">
+            <input type="button" value="cancel" routerLink="/admins">
+        </form>
+    </body>
+</div> -->
+
+<div class="container">
+    <div class="d-flex justify-content-between align-bottom border-bottom mb-3">
+      <h1>Add Admin </h1>
+      <div class="d-flex flex-row align-items-end gap-2 mb-3">
+        <div class="btn btn-outline-secondary" routerLink="/admins">Back</div>
+      </div>
+    </div>
+  
+
+    <form>
+    
+    <div class="row justify-content-center">
+        <div class="col-3">
+          <div alt="profile" class="border" style="width: 300px; height: 300px;"></div>
+        </div>
+        <div class="col-6">
+          <div class="col-9 pb-5">
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text">
+            <label>First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text">
+            <label>Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text">
+            <label>Phone number</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" type="email">
+            <label>Email</label>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="form-floating mb-3">
+            <input class="form-control" [type]="showPassword ? 'text' : 'password'">
+            <label>Password</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" [type]="showPassword ? 'text' : 'password'">
+            <label>Confirm Password</label>
+          </div>
+          <p><input class="form-checkbox" type="checkbox" value="{{ showPassword }}" (change)="toggle()"> show password</p>
+        
+        </div>
+        <button class="btn btn-primary">Save</button>
+        </div>
+        
+    </div>
+    
+    </form>
+  </div>

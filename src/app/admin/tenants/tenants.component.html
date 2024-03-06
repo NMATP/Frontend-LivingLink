@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-bottom border-bottom mb-3">
+      <h1>Tenants Management</h1>
+      <div class="d-flex flex-row align-items-end gap-2 mb-3">
+        <button class="btn btn-outline-secondary d-flex flex-row">
+          <i class="bi bi-filter me-2"></i> Filter
+        </button>
+        <input type="text" class="form-control" placeholder="search">
+
+        <button class="btn btn-outline-secondary d-flex flex-row" routerLink="/tenants-add">Add</button>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Citizen ID</th>
+        <th scope="col">Room / Building</th>
+        <th scope="col">Payment Date</th>
+        <th scope="col">Create By</th>
+        <th scope="col">Create On</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        
+      <tr *ngFor="let row of getTenantList(10)">
+        <th scope="row">{{ row.id }}</th>
+        <td>{{ row.name }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.phone }}</td>
+        <td>{{ row.citizen }}</td>
+        <td>{{ row.room + '/' + row.building }}</td>
+        <td>{{ row.payment_date }}</td>
+        <td>{{ row.create_by }}</td>
+        <td>{{ row.create_on.toISOString() }}</td>
+        <td><button class="btn btn-warning" routerLink="/tenants-edit"><i class="bi bi-pencil-square"></i></button></td>
+        <td><button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  
